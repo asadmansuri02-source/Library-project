@@ -1,12 +1,191 @@
-@font-face {
-    font-family: 'Arvo';
-    src: url('../assets/Arvo/Arvo-Regular.ttf') format('truetype');
-    src: url('../assets/Arvo/Arvo-BoldItalic.ttf') format('truetype');
+@font-face{ 
+    font-family: "DMSerif";
+    src:url('../asserts/dmfont/DMSerifText-Regular.ttf') format('truetype')
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Arvo', serif;
+    font-family: "DMSerif",sans-serif;
+}
+
+.header{
+ background: linear-gradient(135deg, #21f0e2, #e63636); 
+ color: white;
+  display: flex;
+  justify-content: space-between; /* title left, nav right */
+  align-items: center;
+  padding: 15px 50px;
+  box-shadow: 0 4px 8px rgba(232, 225, 225, 0.2);
+}
+.header h1{
+    font-size: 2rem;
+    font-family: "poppins", sans-serif;
+    margin: 0;
+}
+.nav nav a{
+    color: white;
+    text-decoration:none;
+    margin-left: 25px;
+    font-size: 18px;
+    font-style: 500;
+  
+}
+.nav nav a:hover {
+  color: #1cbbeb; /* gold color on hover */
+ 
+}
+#menu-toggle{
+  display: none;
+}
+.menu-icon{
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+/* .img{
+    background-size:cover ;
+    background-repeat: no-repeat;
+
+} */
+ .form-section {
+  background:url('/assets/14.jpg') no-repeat;
+  background-size:  1522px 100%;
+  background-position: center;
+   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 20px;
+}
+
+/* Form heading */
+.form-section h3 {
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 35px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌿 FORM CONTAINER */
+.form-container {
+      background: linear-gradient(135deg, #0fe4f3, #eb7474);
+  /* background: rgba(255, 255, 255, 0.98); */
+  padding: 40px 45px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 420px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Label and Input styling */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color:whitesmoke;
+  margin-bottom: 6px;
+  font-size: 15px;
+ font-family: "poppins", sans-serif;
 
 }
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e6dede;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+}
+
+/*  BUTTON STYLING */
+button {
+  width: 100%;
+  background: linear-gradient(135deg, #ec7957, #e56382);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #33dfe8, #e76363);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (width< 768px) {
+  .header{
+    /* home icon is in single line */
+ flex-wrap: wrap;
+ padding: 15px 20px;
+}
+ .header h1{
+    font-size: 1.5rem;
+ }
+.menu-icon{
+  display: block;
+}
+/* when checked change nav position */
+#menu-toggle:checked ~ .nav{
+  background-color: fff;
+  top: 70px;
+}
+.nav{
+  /* display: none; */
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  background:rgba(255, 255, 255, 0.1) ;
+  /* it blur behind */
+   backdrop-filter: blur(10px);
+   border-radius: 10px;
+   margin-top: 10px;
+   padding: 10px 0;
+ transition: all 0.4s ease-in-out;
+}
+
+
+.form-section h3{
+  font-size: 2.5rem;
+
+}
+.form-container{
+  width: 98%;
+  padding: 2em;
+}
+.nav a {
+    margin: 10px 0;
+    display: block;
+  }
+   /* Show menu when checkbox is checked */
+  #menu-toggle:checked ~ .nav {
+    display:flex;
+}
+
+}
+

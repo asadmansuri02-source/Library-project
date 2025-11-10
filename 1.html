@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Library Project</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <script src="scripts/app.js" type="module"></script>
-</p>
-
-
-    <div class="header">
-    <h1>FICTION LIBRARY.</h1>
+ 
+ <div class="header">
+    <h1>TUTORING LIBRARY.</h1>
+    <!---it takes 3line ayengi-->
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <div class="nav">
@@ -27,13 +25,12 @@
    </div>
     
   
-  <section class="form-section">
-
-    <h3>  Library Login Form </h3>
-
+  <section class="form-section" id="form-section">
+    
+    <h3>Library Form</h3>
+ 
     <div class="form-container">
       <form>
-
         <div class="form-group">
           <label for="title">Book Title</label>
           <input type="text" id="title" name="title" placeholder="Enter book title" required>
@@ -58,13 +55,12 @@
           <label for="quantity">Quantity</label>
           <input type="number" id="quantity" name="quantity" placeholder="Enter number of copies" min="1" required>
         </div>
-
         <div class="form-group">
-          <label for="quantity">ISBN No.</label>
-          <input type="number" id="quantity" name="quantity" placeholder="Enter number of copies" min="1" required>
+          <label for="Isbn">ISBN</label>
+          <input type="number" id="ISBN" name="ISBN" placeholder="Enter ISBN number" required>
         </div>
 
-        <button type="submit">Add Book</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   </section>
@@ -72,7 +68,49 @@
    
  
     <script src="/script/App.js" type="module"></script>
-
 </body>
 </html>
 
+@media screen and (width< 768px) {
+  .header{
+    /home icon is in single line/
+ flex-wrap: wrap;
+ padding: 15px 20px;
+}
+ .header h1{
+    font-size: 1.5rem;
+ }
+.menu-icon{
+  display: block;
+}
+/* when checked change nav position */
+#menu-toggle:checked ~ .nav{
+  /* background-color: black; */
+  top: 70px;
+}
+.nav{
+  /* display: none; */
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  background:rgba(255, 255, 255, 0.1) ;
+  /it blur behind/
+   backdrop-filter: blur(10px);
+   border-radius: 10px;
+   margin-top: 10px;
+   padding: 10px 0;
+ transition: all 0.4s ease-in-out;
+}
+.nav a {
+    margin: 10px 0;
+    display: block;
+  }
+   /* Show menu when checkbox is checked */
+  #menu-toggle:checked ~ .nav {
+    display: flex;
+  }
+ 
+}
